@@ -14,6 +14,9 @@ public class QueryConfig {
     @Value("${READ_SQL_DEPARTAMENTO}")
     private String readSqlDepartamento;
 
+    @Value("${READ_SQL_DEPARTAMENTO_ID}")
+    private String readSqlDepartamentoId;
+
     @Value("${READ_SQL_EMPRESA}")
     private String readSqlEmpresa;
 
@@ -47,6 +50,10 @@ public class QueryConfig {
 
     public String getReadSqlDepartamento() {
         return readSqlDepartamento;
+    }
+
+    public String getReadSqlDepartamentoId() {
+        return readSqlDepartamentoId;
     }
 
     public String getReadSqlEmpresa() {

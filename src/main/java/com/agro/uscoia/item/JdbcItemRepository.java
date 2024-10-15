@@ -32,6 +32,7 @@ public class JdbcItemRepository implements ItemRepository {
 		}
 		map.put("pais", queryConfig.getReadSqlPais());
 		map.put("departamento", queryConfig.getReadSqlDepartamento());
+		map.put("departamento_id", queryConfig.getReadSqlDepartamentoId());
 		map.put("empresa", queryConfig.getReadSqlEmpresa());
 		map.put("almacen", queryConfig.getReadSqlAlmacen());
 		map.put("almacen_id", queryConfig.getReadSqlAlmacenId());
@@ -52,6 +53,7 @@ public class JdbcItemRepository implements ItemRepository {
 
 	@Override
 	public List<Item> read(String entidad, Long id) {
+		System.out.println(entidad + "," + id + "," + getSQL(entidad, id));
 		return jdbcTemplate.query(getSQL(entidad, id), BeanPropertyRowMapper.newInstance(Item.class));
 	}
 }
